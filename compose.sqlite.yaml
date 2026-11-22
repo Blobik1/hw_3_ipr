@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:${HOST_PORT:-8080}:8000"
+    environment:
+      GREETING: "${GREETING:-Hello, Docker!}"
+    volumes:
+      - counter_data:/data
+volumes:
+  counter_data:
